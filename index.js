@@ -2,7 +2,10 @@ const express = require('express'),
      app = express(),
      mongo = require('mongoose'),
      auth = require('./router/Auth'),
-     user = require('./router/User');
+     user = require('./router/User'),
+     cart = require('./router/cart'),
+     product = require('./router/Product'),
+     oreder = require('./router/Order');
 require('dotenv').config();
 
 // Connect database mongoDB
@@ -20,6 +23,10 @@ require('./middleware/App')(app);
 // Routers
 app.use(auth);
 app.use(user);
+app.use(cart);
+app.use(oreder);
+app.use(product);
+
 
 // Get main page
 app.get('/', (req, res)=>{
