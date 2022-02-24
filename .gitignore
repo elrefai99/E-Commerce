@@ -2,7 +2,7 @@
 node_modules
 build
 npm-debug.log
-
+package-lock.json
 # Env
 .env
 .env.local
